@@ -6,19 +6,20 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
-public class HandlerService {
+public class HandlerService implements IHandlerService{
     public Map<Character, Integer> countOfSymb(String inputString) {
         Map<Character, Integer> map = new LinkedHashMap<>();
+        int count = 0;
+
         for(int i = 0; i < inputString.length(); i++) {
             if(!map.containsKey(inputString.charAt(i))) {
-                int k = 1;
-                map.put(inputString.charAt(i), k);
-            }
-            else {
-                int c = map.get(inputString.charAt(i));
-                map.put(inputString.charAt(i), ++c);
+                map.put(inputString.charAt(i), 1);
+            } else {
+                count = map.get(inputString.charAt(i));
+                map.put(inputString.charAt(i), ++count);
             }
         }
+
         Comparator<Map.Entry<Character, Integer>> valueComparator = Map.Entry.comparingByValue(Comparator.reverseOrder());
         Map<Character, Integer> sortedMap = map.entrySet()
                 .stream()
@@ -34,8 +35,7 @@ public class HandlerService {
             if(k != map.size() - 1) {
                 k++;
                 stringBuilder.append("\"" + c + "\"" + " : ").append(map.get(c) + ", ");
-            }
-            else {
+            } else {
                 stringBuilder.append("\"" + c + "\"" + " : ").append(map.get(c));
             }
         }

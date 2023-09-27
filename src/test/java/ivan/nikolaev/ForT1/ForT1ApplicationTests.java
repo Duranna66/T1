@@ -1,6 +1,6 @@
 package ivan.nikolaev.ForT1;
 
-import ivan.nikolaev.ForT1.service.HandlerService;
+import ivan.nikolaev.ForT1.service.IHandlerService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import java.util.Map;
 @SpringBootTest
 class ForT1ApplicationTests {
 	@Autowired
-	private HandlerService handlerService;
+	private IHandlerService handlerService;
 
 	@Test
 	void contextLoads() {
