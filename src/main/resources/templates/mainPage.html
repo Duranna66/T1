@@ -1,21 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Main Page</title>
 </head>
-<body>
-<h1>Счетчик символов в строке</h1>
 
-<form action="/answer" method="post">
-    <label for="inputString">Введите строку:</label>
-    <input type="text" id="inputString" name="str">
-    <input type="submit" value="ответ">
-</form>
+<style>
+    .main_styles {
+        color: #FF69B4;
+        text-align: center;
+        background-color: aqua;
+        display: block;
+    }
+    .page{
+        color: #FF69B4;
+        background-color: aqua;
+    }
+    .answer_block {
+        color: #FF69B4;
+        display: inline-flex;
+        font-family: .AppleSystemUIFont;
+        font-size: large;
+        letter-spacing: normal;
+    }
+    .btn {
+        color: #FF69B4;
+        border-radius: 13px;
+        height: 42px;
+        width: 80px;
+        padding: 8px;
+        margin: 8px;
+        font-family: .AppleSystemUIFont;
+        font-size: large;
+        letter-spacing: normal;
+        border-color: white;
 
-<h2>Вы ввели:</h2>
-<p th:text="${string}"></p>
-<h2>Ответ:</h2>
-<p th:text="${dao}"></p>
-</body>
+    }
+    .btn:hover {
+        background-color: aliceblue;
+    }
+    .input {
+        color: #FF69B4;
+        font-family: .AppleSystemUIFont;
+        font-size: large;
+        letter-spacing: normal;
+        border-radius: 13px;
+        height: 20px;
+        width: 150px;
+        padding: 8px;
+        margin: 8px;
+    }
+    .text_input {
+        color: black;
+        font-size: larger;
+        font-family: .AppleSystemUIFont;
+        letter-spacing: normal;
+        margin: 13px;
+    }
+    .output{
+        color: black;
+        font-size: large;
+        font-family: .AppleSystemUIFont;
+        letter-spacing: normal;
+        margin: 13px;
+    }
+    .text_output {
+        color: #FF69B4;
+        font-size: large;
+        font-family: .AppleSystemUIFont;
+        letter-spacing: normal;
+        margin: 13px;
+    }
+
+</style>
+<body class="page">
+<div class="main_styles">
+    <h1>Счетчик символов в строке</h1>
+        <form action="/answer" method="post" class="test">
+            <label for="inputString" class="text_input" >Введите строку:</label>
+            <input type="text" id="inputString" name="str" class="input">
+            <input type="submit" value="ответ" class="btn" >
+        </form>
+        <div class="answer_block">
+            <h2 class="output">Вы ввели:</h2>
+            <p th:text="${string}" class="text_output"></p>
+            <h2 class="output">Ответ:</h2>
+            <p th:text="${dao}" class="text_output"></p>
+        </div>
+        </div>
+    </body>
 </html>
