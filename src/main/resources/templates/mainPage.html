@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Hello</title>
+    <title>Main Page</title>
 </head>
 <body>
-<h1>Kkk</h1>
+<h1>Счетчик символов в строке</h1>
+
+<form action="/answer" method="post">
+    <label for="inputString">Введите строку:</label>
+    <input type="text" id="inputString" name="str">
+    <input type="submit" value="ответ">
+</form>
+
+<h2>Вы ввели:</h2>
+<p th:text="${string}"></p>
+<h2>Ответ:</h2>
+<p th:text="${dao}"></p>
 </body>
 </html>
