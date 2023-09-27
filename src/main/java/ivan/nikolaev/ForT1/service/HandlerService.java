@@ -1,4 +1,4 @@
-package ivan.nikolaev.ForT1.dao;
+package ivan.nikolaev.ForT1.service;
 
 import org.springframework.stereotype.Service;
 

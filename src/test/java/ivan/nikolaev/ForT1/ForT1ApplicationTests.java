@@ -1,12 +1,11 @@
 package ivan.nikolaev.ForT1;
 
-import ivan.nikolaev.ForT1.dao.HandlerService;
+import ivan.nikolaev.ForT1.service.HandlerService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.HashMap;
 import java.util.Map;
 
 @SpringBootTest
